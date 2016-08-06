@@ -1,6 +1,6 @@
 class CreateAvailabilities < ActiveRecord::Migration
   def change
-    create_table :availailities do |t|
+    create_table :availabilities do |t|
       t.datetime :start, null: false, index: true
       t.datetime :end, null: false, index: true
 

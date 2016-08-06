@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :cohort
   has_many :availabilities
 
   def password
@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   end
 
   def password=(new_password)
-    @password = Password.create(new_password)
+    @password = BCrypt::Password.create(new_password)
     self.password_hash = @password
   end
 end
