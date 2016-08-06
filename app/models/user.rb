@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   belongs_to :cohort
   has_many :availabilities
+  has_many :assignments, :through => :cohort
 
   def password
     @password ||= BCrypt::Password.new(password_hash)

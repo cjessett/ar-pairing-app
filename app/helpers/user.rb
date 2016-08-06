@@ -1,7 +1,7 @@
 helpers do
   def authenticate!
-    @user = User.find_by_username params[:username]
-    if @user.password == password[:password]
+    @user = User.find_by_username params[:user][:username]
+    if @user.password == params[:user][:password]
       session[:user_id] = @user.id
     else
       redirect '/login'

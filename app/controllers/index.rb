@@ -7,8 +7,15 @@ get '/login' do
 end
 
 post '/login' do
-  # log user in
+  authenticate!
+  redirect '/profile'
+end
+
+get '/profile' do
+  erb :'users/profile'
 end
 
 get '/logout' do
+  session.delete(:user_id)
+  redirect '/'
 end

@@ -1,9 +1,12 @@
 get '/users/:user_id/availabilities' do
-  # show me users in my groups availabilities
+  # show me my availabilities
+  @availabilities = User.find_by_id(params[:id]).availabilities
+  erb :'availabilities/index'
 end
 
 get '/users/:user_id/availabilities/new' do
   # let me create a new availability
+  erb :'availabilities/new'
 end
 
 post '/users/:user_id/availabilities' do
