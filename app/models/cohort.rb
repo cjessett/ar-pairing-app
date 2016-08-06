@@ -1,3 +1,3 @@
-class Group < ActiveRecord::Base
+class Cohort < ActiveRecord::Base
   # Remember to create a migration!
 end
