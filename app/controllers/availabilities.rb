@@ -1,30 +1,6 @@
-get '/users/:user_id/availabilities' do
-  # show me my availabilities
-  @availabilities = User.find_by_id(params[:id]).availabilities
+get '/:user_id/:assignment_id/availabilities' do
+  # show me availabilities for a specific user and assignment
+  @availabilities = Availability.where(user_id: params[:user_id], assignment_id: params[:assignment_id])
   erb :'availabilities/index'
 end
 
-get '/users/:user_id/availabilities/new' do
-  # let me create a new availability
-  erb :'availabilities/new'
-end
-
-post '/users/:user_id/availabilities' do
-  # let me see a specific users' availabilities
-end
-
-get '/users/:user_id/availabilities/:id' do
-  # let me see a single users' availability
-end
-
-get '/users/:user_id/availabilities/:id/edit' do
-  # let me see a form to edit an availability of mine
-end
-
-put '/users/:user_id/availabilities/:id' do
-  #  let me edit
-end
-
-delete '/users/:user_id/availabilities/:id' do
-  # let me delete
-end

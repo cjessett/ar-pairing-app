@@ -1,7 +1,7 @@
 <% if @assignments %>
   <ul>
     <% @assignments.each do |a| %>
-      <li><a href="/assignments/<%= a.id %>"><%= a.number %></a></li>
+      <li><a href="/<%= @user.id %>/<%= a.id %>/availabilities"><%= a.number %></a></li>
     <% end %>
   </ul>
 <% end %>
