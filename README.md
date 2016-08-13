@@ -5,8 +5,8 @@
 - A user must join a cohort
 
 - A user can see all of their cohort's 
-- -  assignments
-- -  members
+- - assignments
+- - members
 
 - crud availabilities for a particular assignment
 - see availabilities of other cohort members on an assignment
